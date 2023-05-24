@@ -32,8 +32,6 @@ img {
     border: 0.1px solid #a7a8cd;
     border-radius: 10px;
     background-color: #fff;
-    position: absolute;
-    /* margin: 0 auto; */
 }
 
 .card-text {
