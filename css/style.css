@@ -28,7 +28,7 @@ img {
 }
 
 .card {
-    width: 350px;
+    max-width: 350px;
     border: 0.1px solid #a7a8cd;
     border-radius: 10px;
     background-color: #fff;
