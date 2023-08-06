@@ -1,17 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const folderPath = path.resolve('./Students');
+const folderPath = path.join(__dirname, 'Students');
 const fileName = 'user.js';
-const filePath = folderPath + '\\' + fileName;
+const filePath = path.join(folderPath, fileName);
 const fileContent = 'This is a JavaScript file';
 const oldPath = folderPath;
-const newPath = path.resolve('./Names');
+const newPath = path.join(__dirname, 'Names');
 const newFilePath = newPath + '\\' + fileName;
-const myName = "My name is Daniel Okoro\n";
-const personalInfo = "I am two decades and a half old.\nI identify as male and I am a Nigerian.\nIf you want to connect with me, you can call my line - 09038576560. Bye!";
-const oldFilePath = path.resolve('./Names/user.js')
-const newerFilePath = path.resolve('./Names/daniel_okoro.js');
+const myName = {Name:'Daniel Okoro'};
+const personalInfo = {...myName, age: 25, phone_number: '09038576560', Country: 'Nigeria'};
+const oldFilePath = path.join(newPath, fileName)
+const newerFilePath = path.join(newPath, 'daniel_okoro.js');
 
 
 //Create the newDirectory asynchronously
@@ -43,7 +43,7 @@ fs.rename(oldPath, newPath, (err) => {
 });
 
 //Add my name as content to "users.js"
-fs.writeFile(newFilePath, myName, (err) => {
+fs.writeFile(newFilePath, JSON.stringify(myName), (err) => {
     if(err){
         console.log(err);
     } else {
@@ -52,7 +52,7 @@ fs.writeFile(newFilePath, myName, (err) => {
 });
 
 //Add other personal info
-fs.appendFile(newFilePath, personalInfo, (err) => {
+fs.writeFile(newFilePath, JSON.stringify(personalInfo), (err) => {
     if(err){
         console.log(err);
     } else {
