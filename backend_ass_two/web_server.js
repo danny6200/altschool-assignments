@@ -1,6 +1,3 @@
-//___________________________
-// Web server implementation
-//___________________________
 const http = require("http")
 const fs = require("fs")
 

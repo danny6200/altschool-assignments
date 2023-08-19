@@ -14,7 +14,7 @@ const requestHandler = (req, res) => {
         getAnItem(req, res)
     } else if (req.url === "/items" && req.method === "POST"){
         addItem(req, res)
-    } else if (req.url === "/items" && req.method === "PUT"){
+    } else if (req.url === "/items" && req.method === "PATCH"){
         updateItem(req, res)
     } else if (req.url === "/items" && req.method === "DELETE"){
         deleteItem(req, res)
